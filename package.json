@@ -2,9 +2,9 @@
   "name": "s3-manager",
   "version": "1.0.0",
   "description": "Handle basic CRUD operations on an s3 bucket",
-  "main": "\u001b[D\u001b[D\u001b[\u001b[C\u001bserver.js)\u001b[D\u001b[Dindex.js)\u001b[",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js ./tests"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,11 @@
   },
   "homepage": "https://github.com/jaduri/s3-manager#readme",
   "dependencies": {
-    "aws-sdk": "^2.1046.0"
+    "aws-sdk": "^2.1046.0",
+    "dotenv": "^10.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "jest": "^27.4.4"
+  }
 }

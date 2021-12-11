@@ -1,6 +1,8 @@
 import S3 from 'aws-sdk/clients/s3.js';
 import Bucket from './core.js';
 
+// creates s3 service with default bucket
+// and returns bucket instance with some useful methods
 export default function setup(config) {
   try {
     if (typeof config !== 'object') {
@@ -16,7 +18,7 @@ export default function setup(config) {
       throw new Error('Please provide a bucket name');
     }
 
-    const s3 = new S3(config);
+    const s3 = new S3({ ...config, params: { Bucket: config.bucket } });
 
     return new Bucket(s3);
   } catch (err) {

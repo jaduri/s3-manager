@@ -6,6 +6,11 @@ class Bucket {
   // upload item to bucket
   async upload(payload) {}
 
+  // enumerate up to 1000 objects in bucket
+  async list() {
+    return this.bucket.listObjectsV2().promise();
+  }
+
   // fetch object from bucket
   async retrieve(target) {}
 
