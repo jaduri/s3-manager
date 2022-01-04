@@ -23,6 +23,6 @@ export default function setup(config) {
     return new Bucket(s3);
   } catch (err) {
     console.error(err);
-    return;
+    throw new Error(err.message);
   }
 }
